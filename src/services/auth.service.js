@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:8999/users';
+const API_URL = 'https://encryptogram-backend.herokuapp.com/users';
 class AuthService {
   login(user) {
     return axios
