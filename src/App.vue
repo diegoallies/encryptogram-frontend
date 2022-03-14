@@ -2,7 +2,7 @@
   <div id="app">
 
     <div class="navv">
-  <b-navbar class="navbar navbar-expand navbar-dark bg-dark" fixed="top">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
 
         <div class="navbar-nav push-left">
         <li class="nav-item">
@@ -42,7 +42,7 @@
         </li>
       </div>
 
-    </b-navbar>
+    </nav>
 
     </div>
   
