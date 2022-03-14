@@ -9,22 +9,22 @@
       <Form @submit="handleRegister" :validation-schema="schema">
         <div v-if="!successful">
           <div class="form-group">
-            <label for="fullname">Full Name:</label>
+            <label for="fullname">fullname</label>
             <Field name="fullname" type="text" class="form-control" />
             <ErrorMessage name="fullname" class="error-feedback" />
           </div>
           <div class="form-group">
-            <label for="email">Email:</label>
+            <label for="phone_number">phone_number</label>
+            <Field name="phone_number" type="text" class="form-control" />
+            <ErrorMessage name="phone_number" class="error-feedback" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
             <Field name="email" type="email" class="form-control" />
             <ErrorMessage name="email" class="error-feedback" />
           </div>
           <div class="form-group">
-            <label for="password">Password:</label>
-            <Field name="password" type="password" class="form-control" />
-            <ErrorMessage name="password" class="error-feedback" />
-          </div>
-            <div class="form-group">
-            <label for="phone_number">Phone Number:</label>
+            <label for="password">Password</label>
             <Field name="password" type="password" class="form-control" />
             <ErrorMessage name="password" class="error-feedback" />
           </div>
@@ -61,7 +61,7 @@ export default {
   },
   data() {
     const schema = yup.object().shape({
-      username: yup
+      fullname: yup
         .string()
         .required("Username is required!")
         .min(3, "Must be at least 3 characters!")
