@@ -1,7 +1,6 @@
 <template>
   <!-- particles.js container --> 
   <div id="particles-js"></div>
-
 </template>
 
 <script>
@@ -68,9 +67,7 @@ export default {
       },
       retina_detect: true,
     });
-    document.body.appendChild(stats.domElement);
    
-    
   },
 
 }
@@ -78,5 +75,20 @@ export default {
 
 <style scoped>
 /* ---- reset ---- */ 
+body{ margin:0;
+font:normal 75% Arial, Helvetica, sans-serif;
+} 
+#particles-js{ position:absolute;
+z-index: -1000;
+width: 110%;
+margin-left: -10%;
+height: 100%;
+background-image: url("");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: 50% 50%;
+}
+ /* ---- stats.js ---- */ 
+
 
 </style>
