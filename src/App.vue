@@ -2,7 +2,7 @@
   <div id="app">
 
     <div class="navv">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <nav class="navbar navbar-expand navbar-dark bg-dark naav">
 
         <div class="navbar-nav push-left">
         <li class="nav-item">
@@ -23,7 +23,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/login" class="nav-link bg-dark">
+          <router-link to="/login" class="nav-link bg-dark" onclick="startWrt()">
             <font-awesome-icon icon="sign-in-alt" /> Login
           </router-link>
         </li>
@@ -72,6 +72,13 @@
 
 .push-right {
   margin-right: 5.5%
+}
+
+.naav {
+  position: fixed !important;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 0.5px solid aqua;
 }
  
 

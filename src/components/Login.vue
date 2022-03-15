@@ -1,8 +1,13 @@
 <template>
   <div class="col-md-12">
-    <div class="card card-container">
-      
-      <Form @submit="handleLogin" :validation-schema="schema">
+    <div class="aqua-border card-container">
+      <div class="spaceTaker"></div>
+
+      <h1 class="welc"> <div class="typewrite" data-period="2000" data-type='[ "Welcome back !  "]'> </div>
+        <span class="wrap"></span></h1>
+
+      <h1>Login to your account</h1> <br>       
+      <Form @submit="handleLogin" :validation-schema="schema" class="aqua-borde">
         <div class="form-group">
           <label for="email">Email</label>
           <Field name="email" type="text" class="form-control" />
@@ -80,9 +85,81 @@ export default {
         }
       );
     },
+    
+    startWrt() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    },
   },
 };
+
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    
 </script>
 <style scoped>
+.aqua-border {
+  border: #00ffd5 0.5px solid;
+  border-radius: 1%;
+  padding: 2%;
+}
 
+.spaceTaker {
+  margin-bottom: 10%;
+}
+
+.welc {
+  font-size: 600%;
+  text-align: center;
+}
 </style>
