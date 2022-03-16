@@ -57,10 +57,15 @@
         </div>
 
   </form>
+<!-- small bloxk at bottom right corner -->
 
+       <div class="smallBlock aqua-border"></div>
 
-
+  
+  
     </div>
+
+    
   
   </div>
 </div>
@@ -164,6 +169,17 @@ input {
   border: #00ffd5 0.5px solid;
   border-radius: 1.5%;
 }
+
+.smallBlock {
+  margin-top: 37.8%;
+  margin-left: -2.5%;
+  height: 26%;
+  width: 37%;
+  z-index: 2;
+  position: fixed;
+ 
+}
+
 /* code for button */
 
 
