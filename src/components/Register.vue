@@ -1,6 +1,9 @@
 <template>
   <div class="col-md-12">
-    <div class="card card-container">
+    <div class="card card-container bg-dark">
+
+      <div class="spacer frm bg-dark"> <h1 class="pd">Welcome to EncryptoGram</h1>
+        </div>
       <!-- <img
         id="profile-img"
         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -120,6 +123,21 @@ export default {
   },
 };
 </script>
+
+
 <style scoped>
+
+.spacer {
+  height: 10%;
+}
+
+.pd {
+  margin-top: 6%;
+}
+
+
+
+
+
 
 </style>

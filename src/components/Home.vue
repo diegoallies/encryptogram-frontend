@@ -1,6 +1,17 @@
 <template>
-  <!-- particles.js container --> 
-  <div id="particles-js"></div>
+  <!-- particles.js container -->
+  
+
+<div class="thatDiv">
+
+  <div id="particles-js"> 
+
+  <h1 class="eg"> <span class="enc">EncryptoGram</span> </h1>
+
+  </div>
+  <div class="spaceTaker"></div>
+</div>
+ 
 </template>
 
 <script>
@@ -79,8 +90,9 @@ body{ margin:0;
 font:normal 75% Arial, Helvetica, sans-serif;
 } 
 #particles-js{ position:absolute;
-z-index: -1000;
-width: 110%;
+z-index: -10;
+width: 100%;
+margin-bottom: -20%;
 margin-left: -10%;
 height: 100%;
 background-image: url("");
@@ -88,7 +100,21 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: 50% 50%;
 }
- /* ---- stats.js ---- */ 
+
+.eg {
+  text-align: center;
+  margin-bottom: -4%;
+  z-index: 5;
+
+}
+
+
+
+.enc {
+  font-size: 400%;
+  background: rgba(0, 0, 0, 0);
+  margin-bottom: -20%;
+}
 
 
 </style>

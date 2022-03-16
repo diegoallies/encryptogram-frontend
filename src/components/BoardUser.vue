@@ -26,7 +26,14 @@
       <div class="p-image"><img :src="post.img" /></div>
     </div>
 </div>
-<h1>end of feed</h1>
+
+<div class="eofLine">
+  <h1 class="eof">End of feed</h1>
+</div>
+
+<div class="stk"></div>
+
+
     </div>
 
     <div class="col">
@@ -52,14 +59,17 @@
               v-show="loading"
               class="spinner-border spinner-border-sm bg-blue"
             ></span>
-            <span class="bg-black">Submit</span>
+            <span class="bg-black" onclick="rld()">Submit</span>
           </button>
         </div>
 
   </form>
 <!-- small bloxk at bottom right corner -->
 
-       <div class="smallBlock aqua-border"></div>
+       <div class="smallBlock aqua-border">
+   <h1 class="eg"> EncryptoGram</h1>
+          <div id="particles-js"></div>
+       </div>
 
   
   
@@ -177,7 +187,37 @@ input {
   width: 37%;
   z-index: 2;
   position: fixed;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
  
+}
+
+.eof {
+  text-align: center;
+}
+
+.eofLine {
+  border: #00ffd5 solid 0.5px;
+  border-left: #00ffd5 solid 0.5px;
+  border-right: #00ffd5 solid 0.5px;
+  margin-top: 2%;
+  margin-left: -2%;
+  width: 100%;
+  border-radius: 1.5%;
+  height: 2%;
+  padding: 3%;
+}
+
+.stk {
+  height: 0.3%;
+}
+
+.eg {
+  margin-top: 11%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
 }
 
 /* code for button */
@@ -237,6 +277,18 @@ input {
     border-radius: 10px;
 }
 
+/* particles */
+
+#particles-js{ position:absolute;
+width: 100%;
+height: 100%;
+margin-left: 0%;
+background-image: url("");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: 50% 50%;
+margin-top: -23%;
+}
 </style>
 
 <script>
@@ -283,6 +335,69 @@ export default {
         this.posts = data;
         console.log(data, this.posts);
       });
+
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 5 },
+          image: { src: "img/github.svg", width: 100, height: 100 },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#2ae6ff",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 400, line_linked: { opacity: 1 } },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3,
+          },
+          repulse: { distance: 200, duration: 0.4 },
+          push: { particles_nb: 4 },
+          remove: { particles_nb: 2 },
+        },
+      },
+      retina_detect: true,
+    });
+   
   },
 
   name: 'Profile',
@@ -292,7 +407,12 @@ export default {
     }
     
   },
-
+  
+  // methods: {
+  //   rld = function () {
+  //     window.location.reload();
+  //   }
+  // },
 };
 </script>
 

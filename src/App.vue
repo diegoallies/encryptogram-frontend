@@ -14,17 +14,17 @@
           <router-link v-if="currentUser" to="/user" class="nav-link bg-dark nbtn">Feed</router-link>
         </li>
       </div>
-      <a href="/" class="navbar-brand ccenter">EncryptoGram</a>
+   
     
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link to="/register" class="nav-link bg-dark">
-            <font-awesome-icon icon="user-plus" class="nbtn" /> Sign Up
+          <router-link to="/register" class="nav-link bg-dark nbtn">
+            <font-awesome-icon icon="user-plus" class="nbtn bg-dark" /> Sign Up
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/login" class="nav-link bg-dark" onclick="startWrt()">
-            <font-awesome-icon icon="sign-in-alt" class="nbtn" /> Login
+          <router-link to="/login" class="nav-link bg-dark nbtn" onclick="startWrt()">
+            <font-awesome-icon icon="sign-in-alt" class="nbtn bg-dark" /> Login
           </router-link>
         </li>
       </div>
