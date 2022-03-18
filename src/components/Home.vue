@@ -89,10 +89,11 @@ export default {
 body{ margin:0;
 font:normal 75% Arial, Helvetica, sans-serif;
 } 
+
 #particles-js{ position:absolute;
 z-index: -10;
 width: 100%;
-margin-bottom: -20%;
+margin-bottom: 0%;
 margin-left: -10%;
 height: 100%;
 background-image: url("");
@@ -112,8 +113,20 @@ background-position: 50% 50%;
 
 .enc {
   font-size: 400%;
-  background: rgba(0, 0, 0, 0);
-  margin-bottom: -20%;
+      font-family: 'Source Sans Pro';
+    font-size: 1.3em;
+    position: absolute;
+    z-index: 10;
+    width: 0px;
+    height: 0px;
+    background: rgba(255, 255, 255, 0);
+    top: 50%;
+    left: 50%;
+    margin: -110px 0 0 -100px;
+    padding: 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    z-index: 100;
 }
 
 

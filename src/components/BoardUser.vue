@@ -24,6 +24,7 @@
       <h5 class="txt bg-dark">{{ post.postText }}</h5>
       <br>
       <div class="p-image"><img :src="post.img" /></div>
+      <div>{{ post._id }}</div>
     </div>
 </div>
 
@@ -324,7 +325,8 @@ export default {
       })
         .then((response) => response.json())
         .then((json) => console.log(json));
-    }
+    },
+    
 
   }
   ,
