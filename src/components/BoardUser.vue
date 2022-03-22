@@ -207,12 +207,13 @@ input {
   margin-left: -2%;
   width: 100%;
   border-radius: 1.5%;
-  height: 2%;
+  height: 1%;
   padding: 3%;
+
 }
 
 .stk {
-  height: 0.3%;
+  height: 0.15%;
 }
 
 .eg {

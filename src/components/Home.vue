@@ -92,19 +92,23 @@ font:normal 75% Arial, Helvetica, sans-serif;
 
 #particles-js{ position:absolute;
 z-index: -10;
-width: 100%;
-margin-bottom: 0%;
-margin-left: -10%;
-height: 100%;
+width: 99%;
+margin-left: -6.9%;
+height: 120%;
 background-image: url("");
 background-repeat: no-repeat;
 background-size: cover;
 background-position: 50% 50%;
 }
 
+.particles-js-canvas-el{
+  width: 120% !important;
+  height: 120% !important;
+}
+
 .eg {
   text-align: center;
-  margin-bottom: -4%;
+  margin-bottom: -8%;
   z-index: 5;
 
 }
@@ -112,16 +116,15 @@ background-position: 50% 50%;
 
 
 .enc {
-  font-size: 400%;
-      font-family: 'Source Sans Pro';
-    font-size: 1.3em;
+    font-family: 'Source Sans Pro';
+    font-size: 400%;
     position: absolute;
     z-index: 10;
     width: 0px;
     height: 0px;
     background: rgba(255, 255, 255, 0);
     top: 50%;
-    left: 50%;
+    left: 20%;
     margin: -110px 0 0 -100px;
     padding: 20px;
     border-radius: 4px;
