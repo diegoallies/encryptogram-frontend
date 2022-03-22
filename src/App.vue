@@ -102,7 +102,6 @@ z-index: -1000;
 width: 110%;
 margin-left: -10%;
 height: 100%;
-background-image: url("");
 background-repeat: no-repeat;
 background-size: cover;
 background-position: 50% 50%;

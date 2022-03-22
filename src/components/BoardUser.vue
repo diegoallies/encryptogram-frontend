@@ -18,14 +18,8 @@
    <!-- consumes space --> 
  </div>
 
-<div v-for="post in posts" :key="post">
-      <div class="bg-dark bloc aqua-border">
-      <h2 class="hed bg-dark">{{ post.fullname }}</h2>
-      <h5 class="txt bg-dark">{{ post.postText }}</h5>
-      <br>
-      <div class="p-image"><img :src="post.img" /></div>
-      <div>{{ post._id }}</div>
-    </div>
+<div class="postBox">  
+  <PostItem v-for="post of posts" :post="post" :key="post._id" />
 </div>
 
 <div class="eofLine">
@@ -60,7 +54,7 @@
               v-show="loading"
               class="spinner-border spinner-border-sm bg-blue"
             ></span>
-            <span class="bg-black" onclick="rld()">Submit</span>
+            <span class="bg-black">Submit</span>
           </button>
         </div>
 
@@ -108,39 +102,10 @@
   margin-bottom: -20%;
 
 }
-.bloc {
-  width: 100%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  border-radius: 1.5%;
-  color: aqua;
-  margin-top: 2%;
-  margin-left: -2%;
 
-}
 
 .feed {
   position: fixed;
-}
-
-.p-image {
-  object-fit: contain;
-  overflow: hidden;
-
-}
-
-.p-image img {
-  width: 100%;
-}
-
-.hed, .txt {
-  margin-left: 2%;
-  margin-top: -1%;
-  border-radius: 10%;
-}
-
-.txt {
-    margin-bottom: -1%;
 }
 
 .cnp {
@@ -188,7 +153,6 @@ input {
   width: 37%;
   z-index: 2;
   position: fixed;
-  background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -285,15 +249,20 @@ input {
 width: 100%;
 height: 100%;
 margin-left: 0%;
-background-image: url("");
 background-repeat: no-repeat;
 background-size: cover;
 background-position: 50% 50%;
 margin-top: -23%;
 }
+
+.postBox {
+  width: 100%;
+}
 </style>
 
 <script>
+import PostItem from "./PostItem.vue"
+
 export default {
   data() {
     return {
@@ -306,31 +275,6 @@ export default {
 
     };
   },
-  methods:{
-    addPost(){
-    fetch("https://encryptogram-backend.herokuapp.com/posts/", {
-        method: "POST",
-        body: JSON.stringify({
-
-        img: this.img,
-        postText: this.postText,
-        fullname: this.currentUser.fullname,
-        
-        atn: this.currentUser.accessToken
-          
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ` + this.currentUser.accessToken
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
-    },
-    
-
-  }
-  ,
   mounted() {
     fetch("https://encryptogram-backend.herokuapp.com/posts/")
       .then((res) => res.json())
@@ -402,6 +346,8 @@ export default {
     });
    
   },
+
+  components: { PostItem },
 
   name: 'Profile',
   computed: {
