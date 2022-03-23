@@ -6,8 +6,13 @@
  <h2 class="hed bg-dark">{{ post.fullname }}</h2>
         <h5 class="txt bg-dark">{{ post.postText }}</h5>
         <br>
+        <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="delbtn">Delete Post</button>
+        <br>
+        <br>
         <div class="p-image"><img :src="post.img" /></div>
+   
         </div>
+     
    
 </template>
 
@@ -30,7 +35,15 @@ mounted() {
       });
 },
 
+computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
+    
+  },
 }
+
+
 </script>
 
 <style scoped>
@@ -69,5 +82,9 @@ mounted() {
   margin-left: -2%;
   margin-bottom: 5%;
 
+}
+
+.delbtn {
+  margin-left: 2%;
 }
 </style>

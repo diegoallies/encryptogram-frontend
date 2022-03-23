@@ -262,8 +262,30 @@ margin-top: -23%;
 
 <script>
 import PostItem from "./PostItem.vue"
-
 export default {
+  methods: {
+    addPost(){
+    fetch("https://encryptogram-backend.herokuapp.com/posts/", {
+        method: "POST",
+        body: JSON.stringify({
+
+        img: this.img,
+        postText: this.postText,
+        fullname: this.currentUser.fullname,
+        
+        atn: this.currentUser.accessToken
+          
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ` + this.currentUser.accessToken
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {console.log(json)
+        location.reload()});
+    },
+  },
   data() {
     return {
   posts: [],
@@ -279,7 +301,7 @@ export default {
     fetch("https://encryptogram-backend.herokuapp.com/posts/")
       .then((res) => res.json())
       .then((data) => {
-        this.posts = data;
+        this.posts = data.reverse();
         console.log(data, this.posts);
       });
 

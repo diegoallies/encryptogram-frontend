@@ -3,13 +3,14 @@
         <h2 class="hed bg-dark">{{ post.fullname }}</h2>
         <h5 class="txt bg-dark">{{ post.postText }}</h5>
         <br>
-        <div class="p-image"><img :src="post.img" /></div>
-        
-        <button @click="deletePost(post._id)">Delete Post</button>
 
         <router-link :to="{name:'SinglePost', params: {id: post._id}}">
-                    VIEW POST
-                </router-link>
+        <div class="p-image"><img :src="post.img" /></div>
+        </router-link>
+
+        <button @click="deletePost(post._id)">Delete Post</button>
+          
+    
        
     </div>
 
@@ -21,27 +22,6 @@ export default {
     props: ["post"],
 
     methods:{
-    addPost(){
-    fetch("https://encryptogram-backend.herokuapp.com/posts/", {
-        method: "POST",
-        body: JSON.stringify({
-
-        img: this.img,
-        postText: this.postText,
-        fullname: this.currentUser.fullname,
-        
-        atn: this.currentUser.accessToken
-          
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ` + this.currentUser.accessToken
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
-    },
-
     deletePost(id){
     fetch("https://encryptogram-backend.herokuapp.com/posts/" + id, {
         method: "DELETE",
@@ -51,7 +31,8 @@ export default {
         },
       })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((json) => {console.log(json)
+        location.reload()});
     },
 
     editPost(id){
