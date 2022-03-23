@@ -4,40 +4,15 @@
         <h5 class="txt bg-dark">{{ post.postText }}</h5>
         <br>
         <div class="p-image"><img :src="post.img" /></div>
+        
         <button @click="deletePost(post._id)">Delete Post</button>
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" >
-            Edit
-        </button> -->
-        <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')" :data-target="post._id">Edit</b-button>
+
+        <router-link :to="{name:'SinglePost', params: {id: post._id}}">
+                    VIEW POST
+                </router-link>
+       
     </div>
 
-    <!-- Modal -->
-<div class="modal fade" :id="post._id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit Post</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <label for="postText">Whats on your mind:</label>
-        <input name="postText" type="text" class="form-control" v-model="postText" />
-      </div>
-      <div class="modal-footer">
-        
-         <button class="btn glow-on-hover btn-block" :disabled="loading" type="submit">
-            <span
-              v-show="loading"
-              class="spinner-border spinner-border-sm bg-blue"
-            ></span>
-            <span class="bg-black" @click="editPost(post._id)">Save</span>
-          </button>
-      </div>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>

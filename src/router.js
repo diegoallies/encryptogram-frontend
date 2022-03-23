@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
 import Register from "./components/Register.vue";
+import SinglePost from "./components/SinglePost.vue"
 // lazy-loaded
 const Profile = () => import("./components/Profile.vue")
 const BoardAdmin = () => import("./components/BoardAdmin.vue")
@@ -23,6 +24,12 @@ const routes = [
   {
     path: "/register",
     component: Register,
+  },
+  {
+    path: "/singlepost/:id",
+    component: SinglePost,
+    name: "SinglePost",
+    props: true
   },
   {
     path: "/profile",
@@ -48,16 +55,4 @@ const router = createRouter({
   routes,
 });
 
-// router.beforeEach((to, from, next) => {
-//     const publicPages = ['/login', '/register', '/home'];
-//     const authRequired = !publicPages.includes(to.path);
-//     const loggedIn = localStorage.getItem('user');
-//     // trying to access a restricted page + not logged in
-//     // redirect to login page
-//     if (authRequired && !loggedIn) {
-//       next('/login');
-//     } else {
-//       next();
-//     }
-//   });
 export default router;
