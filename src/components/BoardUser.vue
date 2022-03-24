@@ -33,7 +33,7 @@
       
   
   <form @submit.prevent="addPost" class="forme aqua-border background-for-text">
-        <div class="greett">
+        <div class="greett background-for-text undl">
           <h1 class="background-for-text">Hello {{ currentUser.fullname }} 👋</h1>
         </div>
         
@@ -111,6 +111,7 @@
   
 }
 
+
 .navv {
   visibility: hidden;
 }
@@ -185,64 +186,6 @@ border-color: #00ffd5;
   text-align: center;
   background: rgba(0, 0, 0, 0);
 }
-
-/* code for button */
-
-
-.glow-on-hover {
-    width: 100%;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
-
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-}
-
-.glow-on-hover:active {
-    color: #000
-}
-
-.glow-on-hover:active:after {
-    background: transparent;
-}
-
-.glow-on-hover:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
- 
 /* particles */
 
 #particles-js{ position:absolute;
@@ -261,7 +204,6 @@ margin-top: -23%;
 
 .greett {
   height: 15%;
-  border-bottom: #00ffd5 solid 1px;
 }
 </style>
 
