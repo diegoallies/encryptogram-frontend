@@ -3,20 +3,32 @@
    <!-- consumes space --> 
  </div>
 <div class="bg-dark bloc aqua-border">
- <h2 class="hed bg-dark">{{ post.fullname }}</h2>
-        <h5 class="txt bg-dark">{{ post.postText }}</h5>
-        <br>
-        <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="delbtn">Delete Post</button>
-        <br>
-        <br><button type="button" class="btn glow-on-hover" data-toggle="modal" data-target="#exampleModalCenter">
+
+<div class="container-lg bhbh"> 
+  <div class="row">
+    <div class="col-9">
+      <h2 class="hed bg-dark">{{ post.fullname }}</h2>
+       <h5 class="txt bg-dark">{{ post.postText }}</h5>
+    </div>
+    <div class="col">
+    <br>
+        <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="btn glow-on-hover">Delete Post</button>
+         <br><button type="button" class="btn glow-on-hover" data-toggle="modal" data-target="#exampleModalCenter">
          Edit Post
         </button>
+    </div>
+  </div>
+</div>
+ 
+       
+        
+       
         <div class="p-image"><img :src="post.img" /> </div>
    
 
-
    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="bg-dark bloc aqua-border">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle"> Edit Post </h5>
@@ -25,12 +37,13 @@
         </button>
       </div>
       <div class="modal-body">
-       <input type="text" :placeholder="post.postText" class="btn-block" v-model="postText"> 
+       <input type="text" id="inputt" :placeholder="post.postText" class="btn-block" v-model="postText"> 
       </div>
       <div class="modal-footer">
       
         <button type="button" class="btn glow-on-hover btn-block" @click="editPost(post._id)">Save changes</button>
       </div>
+    </div>
     </div>
   </div>
 </div>
@@ -140,9 +153,20 @@ computed: {
 
 }
 
-.delbtn {
-  margin-left: 2%;
+.aqua-border {
+  border: #00ffd5 0.5px solid;
+  border-radius: 1.5%;
 }
+
+#inputt {
+  border: #00ffd5 1px solid;
+  border-radius: 0.5%;
+}
+
+.bhbh {
+  background: #343a40 !important;
+}
+
 
 /* code for button */
 
@@ -166,7 +190,6 @@ computed: {
     position: absolute;
     top: -2px;
     left:-2px;
-    color: #002bff !important;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);

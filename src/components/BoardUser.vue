@@ -4,8 +4,6 @@
 
 <div class="body">
 
-
-  
    
 <div class="container">
 
@@ -34,21 +32,18 @@
     <div class="col">
       
   
-  <form @submit.prevent="addPost" class="forme aqua-border">
+  <form @submit.prevent="addPost" class="forme aqua-border background-for-text">
 
-        <h1>Hello {{ currentUser.fullname }} 👋</h1>
-        <h2 class="cnp">Create new post</h2>
-        <div class="form-group">
-          <label for="postText">Whats on your mind:</label>
-          <input name="postText" type="text" class="form-control" v-model="postText" />
+        <h1 class="background-for-text">Hello {{ currentUser.fullname }} 👋</h1>
+        <h2 class="cnp background-for-text">Create new post</h2>
+        <div class="form-group haniah">
+           <input name="postText" type="text" class="form-control" v-model="postText" placeholder="Whats on your mind"/>
         </div>
 
         <div class="form-group">
-          <label for="img">Image URL:</label>
-          <input name="img" type="text" class="form-control" v-model="img" />
+          <input name="img" type="text" class="form-control" v-model="img" placeholder="Paste image URL" />
         </div>
-
-        <div class="form-group">
+        <div class="form-group background-for-text">
           <button class="btn glow-on-hover btn-block" :disabled="loading" type="submit">
             <span
               v-show="loading"
@@ -65,9 +60,7 @@
    <h1 class="eg"> EncryptoGram</h1>
           <div id="particles-js"></div>
        </div>
-
-  
-  
+ 
     </div>
 
     
@@ -76,19 +69,8 @@
 </div>
   
 
-
-
-
-
-
-
-
 </div>
 
-
-
-
- 
 </template>
 
 <style scoped>
@@ -109,7 +91,7 @@
 }
 
 .cnp {
-  margin-top: 5%;
+  margin-top: 15%;
 }
 
 .forme {
@@ -119,10 +101,12 @@
   height: 60%;
   width: 37%;
   padding: 2%;
+  background: rgb(35, 63, 63);
 }
 
 .feed {
   position: fixed;
+  
 }
 
 .navv {
@@ -156,6 +140,8 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+   background: rgb(35, 63, 63) !important;
+  
  
 }
 
@@ -174,6 +160,14 @@ input {
   height: 1%;
   padding: 3%;
 
+}
+
+.haniah {
+  margin-top: 10%;
+}
+
+.input ::placeholder {
+  color: black;
 }
 
 .stk {
@@ -242,7 +236,7 @@ input {
     top: 0;
     border-radius: 10px;
 }
-
+ 
 /* particles */
 
 #particles-js{ position:absolute;
@@ -379,11 +373,6 @@ export default {
     
   },
   
-  // methods: {
-  //   rld = function () {
-  //     window.location.reload();
-  //   }
-  // },
 };
 </script>
 

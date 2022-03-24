@@ -7,10 +7,7 @@
         <router-link :to="{name:'SinglePost', params: {id: post._id}}">
         <div class="p-image"><img :src="post.img" alt="Open image to alter content"/></div>
         </router-link>
-
-          
-    
-       
+ 
     </div>
 
 </template>
@@ -52,6 +49,7 @@ export default {
   margin-left: 2%;
   margin-top: -1%;
   border-radius: 10%;
+  background: rgb(35, 63, 63) !important;
 }
 
 .txt {
@@ -71,6 +69,7 @@ export default {
   color: aqua;
   margin-top: 2%;
   margin-left: -2%;
+  background: rgb(35, 63, 63) !important;
 
 }
 </style>
