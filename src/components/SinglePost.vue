@@ -8,9 +8,32 @@
         <br>
         <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="delbtn">Delete Post</button>
         <br>
-        <br>
-        <div class="p-image"><img :src="post.img" /></div>
+        <br><button type="button" class="btn glow-on-hover" data-toggle="modal" data-target="#exampleModalCenter">
+         Edit Post
+        </button>
+        <div class="p-image"><img :src="post.img" /> </div>
    
+
+
+   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"> Edit Post </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <input type="text" :placeholder="post.postText" class="btn-block" v-model="postText"> 
+      </div>
+      <div class="modal-footer">
+      
+        <button type="button" class="btn glow-on-hover btn-block" @click="editPost(post._id)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
      
    
@@ -40,6 +63,39 @@ computed: {
       return this.$store.state.auth.user;
     }
     
+  },
+
+  methods: {
+    deletePost(id){
+    fetch("https://encryptogram-backend.herokuapp.com/posts/" + id, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ` + this.currentUser.accessToken
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {console.log(json)
+        location.reload()});
+    },
+
+    editPost(id){
+    fetch("https://encryptogram-backend.herokuapp.com/posts/" + id, {
+        method: "PATCH",
+        body: JSON.stringify({
+
+        postText: this.postText,
+          
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ` + this.currentUser.accessToken
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {console.log(json)
+        location.reload()});
+    },
   },
 }
 
@@ -86,5 +142,63 @@ computed: {
 
 .delbtn {
   margin-left: 2%;
+}
+
+/* code for button */
+
+
+.glow-on-hover {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    color: #002bff !important;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: rgb(0, 0, 0)
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }
 </style>

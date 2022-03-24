@@ -8,7 +8,6 @@
         <div class="p-image"><img :src="post.img" alt="Open image to alter content"/></div>
         </router-link>
 
-        <button @click="deletePost(post._id)">Delete Post</button>
           
     
        
@@ -22,35 +21,7 @@ export default {
     props: ["post"],
 
     methods:{
-    deletePost(id){
-    fetch("https://encryptogram-backend.herokuapp.com/posts/" + id, {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ` + this.currentUser.accessToken
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => {console.log(json)
-        location.reload()});
-    },
-
-    editPost(id){
-    fetch("https://encryptogram-backend.herokuapp.com/posts/" + id, {
-        method: "PATCH",
-        body: JSON.stringify({
-
-        postText: this.postText,
-          
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ` + this.currentUser.accessToken
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
-    },
+    
     
 
   }
