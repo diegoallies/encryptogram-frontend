@@ -112,6 +112,10 @@ font:normal 75% Arial, Helvetica, sans-serif;
 
 } 
 
+button {
+  color: white;
+}
+
 #particles-js{ position:absolute;
 z-index: -1000;
 width: 110%;

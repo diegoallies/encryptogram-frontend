@@ -2,18 +2,18 @@
 <div class="spaceTaker">
    <!-- consumes space --> 
  </div>
-<div class="bg-dark bloc aqua-border">
+<div class="bg-dark bloc aqua-border kkk">
 
-<div class="container-lg bhbh"> 
-  <div class="row">
-    <div class="col-9">
-      <h2 class="hed bg-dark">{{ post.fullname }}</h2>
-       <h5 class="txt bg-dark">{{ post.postText }}</h5>
+<div class="container-lg bhbh kkk"> 
+  <div class="row kkk">
+    <div class="col-9 kkk">
+      <h2 class="hed kkk">{{ post.fullname }}</h2>
+       <h5 class="txt kkk">{{ post.postText }}</h5>
     </div>
-    <div class="col">
+    <div class="col kkk">
     <br>
-        <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="btn glow-on-hover">Delete Post</button>
-         <br><button v-if="currentUser._id == post.created_by" type="button" class="btn glow-on-hover" data-toggle="modal" data-target="#exampleModalCenter">
+        <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="btn glow-on-hover buttton kkm">Delete Post</button>
+         <br><button v-if="currentUser._id == post.created_by" type="button" class="btn glow-on-hover buttton" data-toggle="modal" data-target="#exampleModalCenter">
          Edit Post
         </button>
     </div>
@@ -41,7 +41,7 @@
       </div>
       <div class="modal-footer">
       
-        <button type="button" class="btn glow-on-hover btn-block" @click="editPost(post._id)">Save changes</button>
+        <button type="button" class="btn glow-on-hover btn-block butn" @click="editPost(post._id)">Save changes</button>
       </div>
     </div>
     </div>
@@ -138,7 +138,13 @@ computed: {
 }
 
 .txt {
-    margin-bottom: -1%;
+  margin-bottom: -1%;
+  font-size: 200%;
+}
+
+.hed {
+  font-size: 300%;
+  margin-bottom: 3%;
 }
 
 .bloc {
@@ -167,4 +173,25 @@ computed: {
   background: #343a40 !important;
 }
 
+.kkk {
+  background-color: rgb(35, 63, 63) !important;
+}
+
+.kkm {
+  margin-bottom: 13% !important;
+}
+
+.buttton {
+  margin-top: -10%;
+  margin-bottom: 5%;
+  color: white;
+}
+
+.butn {
+  color: white;
+}
+
+#inputt::placeholder {
+  color: white;
+}
 </style>
