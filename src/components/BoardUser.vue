@@ -33,8 +33,10 @@
       
   
   <form @submit.prevent="addPost" class="forme aqua-border background-for-text">
-
-        <h1 class="background-for-text">Hello {{ currentUser.fullname }} 👋</h1>
+        <div class="greett">
+          <h1 class="background-for-text">Hello {{ currentUser.fullname }} 👋</h1>
+        </div>
+        
         <h2 class="cnp background-for-text">Create new post</h2>
         <div class="form-group haniah">
            <input name="postText" type="text" class="form-control" v-model="postText" placeholder="Whats on your mind"/>
@@ -166,8 +168,12 @@ input {
   margin-top: 10%;
 }
 
-.input ::placeholder {
-  color: black;
+::placeholder {
+  color: rgb(35, 63, 63);
+}
+
+input{
+border-color: #00ffd5;
 }
 
 .stk {
@@ -251,6 +257,11 @@ margin-top: -23%;
 
 .postBox {
   width: 100%;
+}
+
+.greett {
+  height: 15%;
+  border-bottom: #00ffd5 solid 1px;
 }
 </style>
 

@@ -13,7 +13,7 @@
     <div class="col">
     <br>
         <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="btn glow-on-hover">Delete Post</button>
-         <br><button type="button" class="btn glow-on-hover" data-toggle="modal" data-target="#exampleModalCenter">
+         <br><button v-if="currentUser._id == post.created_by" type="button" class="btn glow-on-hover" data-toggle="modal" data-target="#exampleModalCenter">
          Edit Post
         </button>
     </div>
