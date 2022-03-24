@@ -5,7 +5,7 @@
         <br>
 
         <router-link :to="{name:'SinglePost', params: {id: post._id}}">
-        <div class="p-image"><img :src="post.img" /></div>
+        <div class="p-image"><img :src="post.img" alt="Open image to alter content"/></div>
         </router-link>
 
         <button @click="deletePost(post._id)">Delete Post</button>

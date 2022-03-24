@@ -73,6 +73,7 @@ export default {
       this.$store.dispatch("auth/login", user).then(
         () => {
           this.$router.push("/user");
+          location.reload();
         },
         (error) => {
           this.loading = false;
