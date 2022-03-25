@@ -72,4 +72,14 @@ export default {
   background: rgb(35, 63, 63) !important;
 
 }
+
+@media screen and (max-width:700px) { 
+
+.hed {
+  font-size: 180%;
+  margin-top: 0%;
+}
+
+
+}
 </style>

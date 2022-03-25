@@ -139,6 +139,7 @@ computed: {
 
 .txt {
   font-size: 200%;
+  margin-bottom: 0% !important;
 }
 
 .hed {
@@ -192,5 +193,22 @@ computed: {
 
 #inputt::placeholder {
   color: white;
+}
+
+@media screen and (max-width:700px) { 
+
+.hed {
+  font-size: 180%;
+  margin-top: 0%;
+}
+
+.txt {
+  font-size: 120%;
+}
+.bloc {
+  margin-left: -0.3%;
+  margin-top: 5%;
+}
+
 }
 </style>

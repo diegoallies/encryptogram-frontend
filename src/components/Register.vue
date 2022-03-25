@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12">
+  <div class="col-md-12 mn aqua-border">
     <div class="card card-container bg-dark">
 
       <div class="spacer frm bg-dark"> <h1 class="pd">Welcome to EncryptoGram</h1>
@@ -12,13 +12,13 @@
       <Form @submit="handleRegister" :validation-schema="schema">
         <div v-if="!successful">
           <div class="form-group">
-            <label for="fullname">fullname</label>
+            <label for="fullname">Fullname</label>
             <Field name="fullname" type="text" class="form-control" />
             <ErrorMessage name="fullname" class="error-feedback" />
           </div>
           <div class="form-group">
-            <label for="phone_number">phone_number</label>
-            <Field name="phone_number" type="text" class="form-control" />
+            <label for="phone_number">Number</label>
+            <Field name="phone_number" type="number" class="form-control" />
             <ErrorMessage name="phone_number" class="error-feedback" />
           </div>
           <div class="form-group">
@@ -135,8 +135,19 @@ export default {
   margin-top: 6%;
 }
 
+.aqua-border {
+  border: #00ffd5 0.5px solid;
+  border-radius: 1.5%;
+}
 
 
+@media screen and (max-width:700px) {
+
+.spacer {
+  height: 30%;
+  margin-top: 15%;
+}
+}
 
 
 

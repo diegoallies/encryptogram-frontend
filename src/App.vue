@@ -1,6 +1,52 @@
 <template>
   <div id="app">
 
+<!-- new nav -->
+
+<!-- Simulate a smartphone / tablet -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Encryptogram</a>
+  <div id="myLinks">
+
+          <router-link @click="myFunction()" v-if="!currentUser" to="/register" class="nav-link nbtn background-for-text right-top-hover">
+            <font-awesome-icon icon="user-plus" class="nbtn background-for-text ic" /> Sign Up
+          </router-link>
+
+          <router-link @click="myFunction()" v-if="!currentUser" to="/login" class="nav-link nbtn background-for-text right-top-hover">
+            <font-awesome-icon icon="sign-in-alt" class="nbtn background-for-text ic" /> 
+            Login
+          </router-link>
+
+    <router-link @click="myFunction()" v-if="currentUser" to="/home" class="nav-link nbtn background-for-text left-top-hover">
+             <font-awesome-icon icon="home" class="nbtn background-for-text ic"/>
+             Home
+          </router-link>
+    <router-link @click="myFunction()" v-if="currentUser" to="/user" class="nav-link nbtn background-for-text left-top-hover">Feed</router-link>
+
+     <router-link @click="myFunction()" to="/contact" class="nav-link nbtn background-for-text right-top-hover">
+           Contact
+          </router-link>
+     <router-link @click="myFunction()" to="/about" class="nav-link nbtn background-for-text right-top-hover">
+      About
+     </router-link>
+     <a class="nav-link nbtn background-for-text right-top-hover" @click.prevent="logOut">
+            <font-awesome-icon icon="sign-out-alt" class="nbtn background-for-text ic"/> LogOut
+          </a>
+     
+  </div>
+  <a href="javascript:void(0);" class="icon" @click="myFunction()">
+    <i class="fa fa-bars"></i> <i class="bi bi-list"></i> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg>
+  </a>
+</div>
+
+<!-- End smartphone / tablet look -->
+</div>
+<!-- end of new nav -->
     <div class="navv">
   <nav class="navbar navbar-expand naav coll">
 
@@ -65,7 +111,66 @@
 </template>
 
 <style>
+.mobile-container {
+  display: none;
+}
+@media screen and (max-width:700px) {
+.navv {
+  display: none;
+}
 
+.mobile-container {
+  display: block;
+}
+
+.ic {
+  display: none;
+}
+/* nav styling */
+
+.topnav {
+  overflow: hidden;
+  position: fixed !important;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 0.5px solid aqua;
+  background: rgb(35, 63, 63) !important;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: rgb(35, 63, 63);
+  color: white;
+}
+
+
+
+
+}
 
 *{
   background-color: #343a40;
@@ -220,7 +325,15 @@ export default {
     logOut() {
       this.$store.dispatch('auth/logout');
       this.$router.push('/login');
-    }
+    },
+    myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
   }
   
 };

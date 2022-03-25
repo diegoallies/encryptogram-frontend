@@ -104,4 +104,17 @@ h1 {
 p {
   font-size: 190%;
 }
+
+@media screen and (max-width:700px) { 
+
+p {
+  font-size: 100%;
+}
+h1 {
+  font-size: 300%;
+  padding: 1.9%;
+}
+
+
+}
 </style>

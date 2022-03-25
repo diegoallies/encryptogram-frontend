@@ -29,7 +29,7 @@
 
     </div>
 
-    <div class="col">
+    <div class="col njnj">
       
   
   <form @submit.prevent="addPost" class="forme aqua-border background-for-text">
@@ -60,7 +60,7 @@
 
        <div class="smallBlock aqua-border">
    <h1 class="eg"> EncryptoGram</h1>
-          <div id="particles-js"></div>
+        
        </div>
  
     </div>
@@ -186,17 +186,6 @@ border-color: #00ffd5;
   text-align: center;
   background: rgba(0, 0, 0, 0);
 }
-/* particles */
-
-#particles-js{ position:absolute;
-width: 100%;
-height: 100%;
-margin-left: 0%;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: 50% 50%;
-margin-top: -23%;
-}
 
 .postBox {
   width: 100%;
@@ -204,6 +193,34 @@ margin-top: -23%;
 
 .greett {
   height: 15%;
+}
+
+@media screen and (max-width:700px) { 
+
+p {
+  font-size: 100%;
+}
+h1 {
+  font-size: 300%;
+  padding: 1.9%;
+}
+
+.njnj {
+  visibility: hidden;
+}
+
+.bloc, .eofLine {
+  width: 200%;
+  margin-left: -8%;
+  margin-top: 10%;
+}
+
+.spaceTaker {
+  margin-top: 40%;
+}
+
+
+
 }
 </style>
 
@@ -257,68 +274,6 @@ export default {
         this.posts = data.reverse();
         console.log(data, this.posts);
       });
-
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#ffffff" },
-        shape: {
-          type: "circle",
-          stroke: { width: 0, color: "#000000" },
-          polygon: { nb_sides: 5 },
-          image: { src: "img/github.svg", width: 100, height: 100 },
-        },
-        opacity: {
-          value: 0.5,
-          random: false,
-          anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#2ae6ff",
-          opacity: 0.4,
-          width: 1,
-        },
-        move: {
-          enable: true,
-          speed: 6,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: { enable: false, rotateX: 600, rotateY: 1200 },
-        },
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" },
-          resize: true,
-        },
-        modes: {
-          grab: { distance: 400, line_linked: { opacity: 1 } },
-          bubble: {
-            distance: 400,
-            size: 40,
-            duration: 2,
-            opacity: 8,
-            speed: 3,
-          },
-          repulse: { distance: 200, duration: 0.4 },
-          push: { particles_nb: 4 },
-          remove: { particles_nb: 2 },
-        },
-      },
-      retina_detect: true,
-    });
    
   },
 
