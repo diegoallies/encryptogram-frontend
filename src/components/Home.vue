@@ -44,4 +44,24 @@ h1 {
   margin-right: 17%;
 }
 
+@media screen and (max-width:700px) { 
+.spacetakerr {
+  background-image: url("https://i.postimg.cc/Jh2GJnWK/simple-background-abstract-minimalism-symmetry-green-blue-775608-wallhere-com.jpg");
+  height: 550px;
+  margin-top: 3%;
+}
+
+h1 {
+  background: #00ffd500;
+  margin-top: 20%;
+  font-size: 300%;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+
+
+
+
+} 
 </style>
