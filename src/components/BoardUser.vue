@@ -15,11 +15,56 @@
      <div class="spaceTaker">
    <!-- consumes space --> 
  </div>
-
+<!-- mobile view modal button -->
+<button type="button" class="btn btn-primary plusbtn" data-toggle="modal" data-target="#exampleModalCenter">
+  +
+</button>
+<!-- end of modal view modal button -->
 <div class="postBox">  
   <PostItem v-for="post of posts" :post="post" :key="post._id" />
 </div>
 
+
+
+<!-- mobile view modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content background-for-text">
+      <form @submit.prevent="addPost" class="former aqua-border background-for-text">
+      <div class="modal-header background-for-text">
+        <h5 class="modal-title background-for-text" id="exampleModalLongTitle"><div class="greett background-for-text undl">
+          <h1 class="background-for-text">Hello {{ currentUser.fullname }} 👋</h1>
+        </div></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body background-for-text">
+        <h2 class="cnp background-for-text">Create new post</h2>
+        <div class="form-group haniah">
+           <input name="postText" type="text" class="form-control" v-model="postText" placeholder="Whats on your mind"/>
+        </div>
+
+        <div class="form-group">
+          <input name="img" type="text" class="form-control" v-model="img" placeholder="Paste image URL" />
+        </div>
+      </div>
+      <div class="modal-footer background-for-text">
+       <button class="btn glow-on-hover btn-block" :disabled="loading" type="submit">
+            <span
+              v-show="loading"
+              class="spinner-border spinner-border-sm bg-blue"
+            ></span>
+            <span class="bg-black">Submit</span>
+          </button>
+      </div>
+       </form>
+    </div>
+
+   
+  </div>
+</div>
+<!-- end of mobile view modal -->
 <div class="eofLine">
   <h1 class="eof">End of feed</h1>
 </div>
@@ -196,6 +241,8 @@ border-color: #00ffd5;
   height: 15%;
 }
 
+
+
 @media screen and (max-width:700px) { 
 
 p {
@@ -218,6 +265,20 @@ h1 {
 
 .spaceTaker {
   margin-top: 40%;
+}
+
+.plusbtn {
+  bottom: 5%;
+  right: 10%;
+  margin-left: -2.5%;
+  height: 7%;
+  width: 14%;
+  z-index: 2;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background: rgb(35, 63, 63) !important;
 }
 
 
