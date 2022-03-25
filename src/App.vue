@@ -37,6 +37,16 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/contact" class="nav-link nbtn background-for-text right-top-hover">
+           Contact
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/about" class="nav-link nbtn background-for-text right-top-hover">
+           About
+          </router-link>
+        </li>
+        <li class="nav-item">
           <a class="nav-link nbtn background-for-text right-top-hover" @click.prevent="logOut">
             <font-awesome-icon icon="sign-out-alt" class="nbtn background-for-text"/> LogOut
           </a>

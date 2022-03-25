@@ -2,29 +2,20 @@
 <div class="spaceTaker">
    <!-- consumes space --> 
  </div>
- <h1 class="thatoblock">  Profile </h1>
+ <h1 class="thatoblock">About us</h1>
  <div class="thatoblock">
 <div class="container maincont">
 
     <div class="userInfo">
-      <p>
-      <strong>Fullname: </strong>
-      {{currentUser.fullname}}
-    </p>
-    <p>
-      <strong>Email: </strong>
-      {{currentUser.email}}
-    </p>
-    <p>
-      <strong>Number: </strong>
-      {{currentUser.number}}
-    </p>
-    <p>
-      <strong>User Id: </strong>
-      <span class="lmt">{{currentUser._id}}</span>
-    </p>
-      <button @click="deleteUser(currentUser._id)" class="glow-on-hover btn-block btnn thb">Delete Account</button>
-  <button @click="deleteUser(currentUser._id)" class="glow-on-hover btn-block btnn lhb">Edit Account Details</button>
+
+     <p>
+         
+        Encryptogram is a fast growing social media platform , made for developers to intereract with. Our main goal is to build a fully secure social media platform where developers can share code and help with casual error codes. A texting system is still underway . Stay tuned !
+            <br> <br>
+        EncryptoGram is designed, written, implimented and managed by Diego Allies.
+
+     </p>
+
     </div>
     
   </div>
@@ -102,7 +93,7 @@ export default {
 }
 
 .lhb {
-  margin-bottom: 2%;
+  margin-bottom: 9%;
 }
 
 h1 {
@@ -111,6 +102,6 @@ h1 {
 }
 
 p {
-  font-size: 200%;
+  font-size: 190%;
 }
 </style>

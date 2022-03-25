@@ -2,29 +2,30 @@
 <div class="spaceTaker">
    <!-- consumes space --> 
  </div>
- <h1 class="thatoblock">  Profile </h1>
+ <h1 class="thatoblock">Contact us</h1>
  <div class="thatoblock">
 <div class="container maincont">
 
     <div class="userInfo">
-      <p>
+
+    <p>
       <strong>Fullname: </strong>
-      {{currentUser.fullname}}
+      Diego Allies
     </p>
     <p>
       <strong>Email: </strong>
-      {{currentUser.email}}
+      diegoallies27@gmail.com
     </p>
     <p>
       <strong>Number: </strong>
-      {{currentUser.number}}
+      0684005634
     </p>
     <p>
-      <strong>User Id: </strong>
-      <span class="lmt">{{currentUser._id}}</span>
+      <strong>Address: </strong>
+      9 Hollywood Cresent, Westgate, Cape Town
     </p>
-      <button @click="deleteUser(currentUser._id)" class="glow-on-hover btn-block btnn thb">Delete Account</button>
-  <button @click="deleteUser(currentUser._id)" class="glow-on-hover btn-block btnn lhb">Edit Account Details</button>
+
+
     </div>
     
   </div>
@@ -102,7 +103,7 @@ export default {
 }
 
 .lhb {
-  margin-bottom: 2%;
+  margin-bottom: 19%;
 }
 
 h1 {
@@ -111,6 +112,6 @@ h1 {
 }
 
 p {
-  font-size: 200%;
+  font-size: 250%;
 }
 </style>
