@@ -138,7 +138,6 @@ computed: {
 }
 
 .txt {
-  margin-bottom: -1%;
   font-size: 200%;
 }
 

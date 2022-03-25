@@ -19,25 +19,25 @@
     
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link to="/register" class="nav-link nbtn background-for-text left-top-hover">
+          <router-link to="/register" class="nav-link nbtn background-for-text right-top-hover">
             <font-awesome-icon icon="user-plus" class="nbtn background-for-text" /> Sign Up
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/login" class="nav-link nbtn background-for-text left-top-hover">
+          <router-link to="/login" class="nav-link nbtn background-for-text right-top-hover">
             <font-awesome-icon icon="sign-in-alt" class="nbtn background-for-text" /> Login
           </router-link>
         </li>
       </div>
       <div v-if="currentUser" class="navbar-nav ml-auto push-right">
         <li class="nav-item">
-          <router-link to="/profile" class="nav-link background-for-text left-top-hover">
+          <router-link to="/profile" class="nav-link background-for-text right-top-hover">
             <font-awesome-icon icon="user" class="background-for-text"/>
             {{ currentUser.username }}
           </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link nbtn background-for-text left-top-hover" @click.prevent="logOut">
+          <a class="nav-link nbtn background-for-text right-top-hover" @click.prevent="logOut">
             <font-awesome-icon icon="sign-out-alt" class="nbtn background-for-text"/> LogOut
           </a>
         </li>
@@ -105,7 +105,17 @@
   border-left: rgb(35, 63, 63) solid 1px;
   border-bottom: rgb(35, 63, 63) solid 1px;
 }
- 
+
+.right-top-hover {
+  border-right: rgb(35, 63, 63) solid 1px;
+  border-top: rgb(35, 63, 63) solid 1px;
+}
+
+.right-top-hover:hover {
+  border-right: aqua solid 1px;
+  border-top: aqua solid 1px;
+  color: aqua !important;
+}
 
 body{ margin:0;
 font:normal 75% Arial, Helvetica, sans-serif;

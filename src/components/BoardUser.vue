@@ -230,7 +230,13 @@ export default {
       })
         .then((response) => response.json())
         .then((json) => {console.log(json)
-        location.reload()});
+        fetch("https://encryptogram-backend.herokuapp.com/posts/")
+      .then((res) => res.json())
+      .then((data) => {
+        this.posts = data.reverse();
+        console.log(data, this.posts);
+      });
+        });
     },
   },
   data() {
