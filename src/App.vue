@@ -32,7 +32,7 @@
      <router-link @click="myFunction()" to="/about" class="nav-link nbtn background-for-text right-top-hover">
       About
      </router-link>
-     <a class="nav-link nbtn background-for-text right-top-hover" @click.prevent="logOut">
+     <a v-if="currentUser" class="nav-link nbtn background-for-text right-top-hover" @click.prevent="logOut">
             <font-awesome-icon icon="sign-out-alt" class="nbtn background-for-text ic"/> LogOut
           </a>
      
@@ -126,6 +126,10 @@
 .ic {
   display: none;
 }
+
+.nbtn {
+  border-top: aqua solid 1px !important;
+}
 /* nav styling */
 
 .topnav {
@@ -150,17 +154,17 @@
 }
 
 .topnav a.icon {
-  background: aqua;
+  background: rgb(35, 63, 63);
   display: block;
   position: absolute;
   right: 0;
   top: 0;
-    border-left: 0.5px solid aqua;
+    border-left: 0.5px solid rgb(35, 63, 63);
 
 }
 
 .topnav a:hover {
-  background-color: rgb(35, 63, 63);
+  background-color: aqua;
   color: black;
 }
 

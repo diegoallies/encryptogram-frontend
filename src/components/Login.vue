@@ -19,7 +19,7 @@
           <ErrorMessage name="password" class="error-feedback" />
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block" :disabled="loading" @click="startwrt()">
+          <button class="btn btn-primary btn-block" :disabled="loading">
             <span
               v-show="loading"
               class="spinner-border spinner-border-sm"

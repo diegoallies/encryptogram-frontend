@@ -32,6 +32,7 @@
             <ErrorMessage name="password" class="error-feedback" />
           </div>
           <div class="form-group">
+              <!-- <router-link @click="myFunction()" v-if="!currentUser" to="/login"> -->
             <button class="btn btn-primary btn-block" :disabled="loading">
               <span
                 v-show="loading"
@@ -39,6 +40,7 @@
               ></span>
               Sign Up
             </button>
+              <!-- </router-link> -->
           </div>
         </div>
       </Form>
@@ -94,7 +96,7 @@ export default {
   },
   mounted() {
     if (this.loggedIn) {
-      this.$router.push("/profile");
+      this.$router.push("/user");
     }
   },
   methods: {
@@ -108,6 +110,7 @@ export default {
           this.successful = true;
           this.loading = false;
         },
+        
         (error) => {
           this.message =
             (error.response &&
@@ -117,10 +120,44 @@ export default {
             error.toString();
           this.successful = false;
           this.loading = false;
+          
+        }
+
+        
+      );
+      this.loading = true;
+      this.sleep(2000);
+      this.handleLogin(user);
+    },
+    handleLogin(user) {
+      console.log("hey")
+      this.loading = true;
+      this.$store.dispatch("auth/login", user).then(
+        () => {
+          this.$router.push("/user");
+          location.reload();
+        },
+        (error) => {
+          this.loading = false;
+          this.message =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
         }
       );
     },
-  },
+    
+  sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+          },
+  
 };
 </script>
 
