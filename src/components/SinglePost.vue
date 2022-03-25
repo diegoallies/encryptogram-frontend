@@ -41,7 +41,7 @@
       </div>
       <div class="modal-footer">
       
-        <button type="button" class="btn glow-on-hover btn-block butn" @click="editPost(post._id)">Save changes</button>
+        <button type="button" class="btn glow-on-hover btn-block butn kkkl" @click="editPost(post._id)">Save changes</button>
       </div>
     </div>
     </div>
@@ -210,5 +210,21 @@ computed: {
   margin-top: 5%;
 }
 
+button {
+  width: 100%;
+  height: 30%;
+
 }
+
+.kkm {
+  margin-top: 1%;
+  margin-bottom: 10%;
+
+}
+
+img {
+  margin-top: 0%;
+}
+}
+
 </style>

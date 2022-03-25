@@ -17,7 +17,7 @@
  </div>
 <!-- mobile view modal button -->
 <button type="button" class="btn btn-primary plusbtn" data-toggle="modal" data-target="#exampleModalCenter">
-  +
+  ➕
 </button>
 <!-- end of modal view modal button -->
 <div class="postBox">  
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="modal-footer background-for-text">
-       <button class="btn glow-on-hover btn-block" :disabled="loading" type="submit">
+       <button class="btn glow-on-hover btn-block" :disabled="loading" type="submit" data-dismiss="modal">
             <span
               v-show="loading"
               class="spinner-border spinner-border-sm bg-blue"
@@ -241,6 +241,10 @@ border-color: #00ffd5;
   height: 15%;
 }
 
+.plusbtn {
+  display:none;
+  border-radius: 30%;
+}
 
 
 @media screen and (max-width:700px) { 
@@ -268,6 +272,7 @@ h1 {
 }
 
 .plusbtn {
+  display: block;
   bottom: 5%;
   right: 10%;
   margin-left: -2.5%;
@@ -278,7 +283,8 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  background: rgb(35, 63, 63) !important;
+  background: aqua !important;
+  color: rgb(35, 63, 63);
 }
 
 

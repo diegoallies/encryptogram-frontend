@@ -150,7 +150,7 @@
 }
 
 .topnav a.icon {
-  background: black;
+  background: aqua;
   display: block;
   position: absolute;
   right: 0;
