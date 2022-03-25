@@ -143,7 +143,8 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-   background: rgb(35, 63, 63) !important;
+  background: rgb(35, 63, 63) !important;
+
   
  
 }

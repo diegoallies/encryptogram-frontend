@@ -155,10 +155,12 @@
   position: absolute;
   right: 0;
   top: 0;
+    border-left: 0.5px solid aqua;
+
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: rgb(35, 63, 63);
   color: black;
 }
 
@@ -210,6 +212,7 @@
   color: white !important;
 }
 
+
 .left-top-hover:hover {
   border-left: aqua solid 1px;
   border-bottom: aqua solid 1px;
@@ -241,15 +244,6 @@ button {
   color: white;
 }
 
-#particles-js{ position:absolute;
-z-index: -1000;
-width: 110%;
-margin-left: -10%;
-height: 100%;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: 50% 50%;
-}
 
 
 /* code for button */
