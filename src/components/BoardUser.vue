@@ -16,7 +16,7 @@
    <!-- consumes space --> 
  </div>
 <!-- mobile view modal button -->
-<button type="button" class="btn btn-primary plusbtn" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary plusbtn" data-toggle="modal" data-target="#mobileviewmodal">
   ➕
 </button>
 <!-- end of modal view modal button -->
@@ -27,7 +27,7 @@
 
 
 <!-- mobile view modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="mobileviewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content background-for-text">
       <form @submit.prevent="addPost" class="former aqua-border background-for-text">
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="modal-footer background-for-text">
-       <button class="btn glow-on-hover btn-block" :disabled="loading" type="submit" data-dismiss="modal">
+       <button class="btn glow-on-hover btn-block" :disabled="loading" type="submit">
             <span
               v-show="loading"
               class="spinner-border spinner-border-sm bg-blue"

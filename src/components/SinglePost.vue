@@ -12,8 +12,14 @@
     </div>
     <div class="col kkk">
     <br>
-        <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="btn glow-on-hover buttton kkm">Delete Post</button>
-         <br><button v-if="currentUser._id == post.created_by" type="button" class="btn glow-on-hover buttton" data-toggle="modal" data-target="#exampleModalCenter">
+        <router-link class="delet" to="/user">
+         <button v-if="currentUser._id == post.created_by" @click="deletePost(post._id)" class="btn glow-on-hover buttton kkm">
+            Delete Post
+          </button>
+        </router-link>
+
+         <br>
+         <button v-if="currentUser._id == post.created_by" type="button" class="btn glow-on-hover buttton" data-toggle="modal" data-target="#exampleModalCenter">
          Edit Post
         </button>
     </div>
@@ -193,6 +199,15 @@ computed: {
 
 #inputt::placeholder {
   color: white;
+}
+
+.delet {
+  color: white;
+}
+
+.delet:hover {
+  border: none;
+  color: blue;
 }
 
 @media screen and (max-width:700px) { 
